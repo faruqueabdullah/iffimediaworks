@@ -1,0 +1,46 @@
+/*
+ * RevenueEngine.module.css
+ * ------------------------
+ * SVG transition classes.
+ * Tailwind cannot target SVG presentation attributes (opacity, stroke-width etc.)
+ * so we define explicit named classes here. Each maps to one visual state.
+ *
+ * Usage: import styles from './RevenueEngine.module.css'
+ *        className={`${styles.segPath} ${isActive ? styles.isActive : styles.isInactive}`}
+ */
+
+/* ── Segment shape ── */
+.segPath {
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+.segPath.isInactive { opacity: 0.72; }
+.segPath.isActive   { opacity: 1; }
+
+/* ── Connector line — always visible, dims when not active ── */
+.connLine {
+  transition: opacity 0.4s ease;
+}
+.connLine.isInactive { opacity: 0.28; }
+.connLine.isActive   { opacity: 1; }
+
+/* ── Connector dot — scales up on activation ── */
+.connDot {
+  transition: transform 0.3s ease;
+}
+.connDot.isActive {
+  transform: scale(1.7);
+}
+
+/* ── Connector label — fades in/out ── */
+.connLabel {
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.connLabel.isInactive { opacity: 0; }
+.connLabel.isActive   { opacity: 1; }
+
+/* ── Center plate texts that follow active segment colour ── */
+.colorTransition {
+  transition: fill 0.5s ease;
+}
