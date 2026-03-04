@@ -22,8 +22,8 @@ export default function BeforeAfterSlider() {
     : "/funnel-before.webp";
 
   const afterImage = isMobile
-    ? "/funnel-after-mobile.webp"
-    : "/funnel-after.webp";
+    ? "/after.png"
+    : "/after-desktop.png";
 
   return (
     <div className="w-full max-w-7xl mx-auto pt-10">

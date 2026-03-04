@@ -22,7 +22,7 @@ export default function Home() {
             </p>
 
             {/* Input + Button */}
-            <div className="flex max-w-md gap-5">
+            <div className="flex max-w-md gap-3">
               <ChatButton text={"Get Free Strategy Call"} />
               <ChatButton text={"Chat on WhatsApp"} />
             </div>

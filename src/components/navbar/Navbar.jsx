@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const NAV_LINKS = [
-  "Home",
-  "About",
-  "Service",
-  "Industries",
-  "Case Studies",
-  "Contact",
+  { text: "Home", link: "/" },
+  { text: "About", link: "about" },
+  { text: "Service", link: "services" },
+  { text: "Industries", link: "industries" },
+  { text: "Case Studies", link: "case-studies" },
+  { text: "Contact", link: "contact" },
 ];
 
 const TwitterIcon = () => (
@@ -68,33 +69,31 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 px-8 max-[480px]:px-4 bg-white backdrop-blur-[20px] border-b border-white/10 transition-all duration-400 ${scrolled ? " bg-white/10" : ""}`}
       >
-        <div  className="max-w-7xl mx-auto h-[70px] flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto h-[70px] flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#" className="logo flex items-center gap-2.5 shrink-0">
+          <Link to={"/"} className="logo flex items-center gap-2.5 shrink-0">
             <div className="logo-mark w-25 grid place-items-center shrink-0">
-              <img className="w-full"
+              <img
+                className="w-full"
                 src="https://horizons-cdn.hostinger.com/ea883b72-9d22-435d-a610-17e32f94f6c0/4664be327166da6fb82b0f67ffa2197a.png"
                 alt=""
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop right */}
           <div className="nav-right flex items-center">
             {/* Nav links */}
             <ul className="nav-links flex items-center gap-2.5 pr-5 list-none">
-              {NAV_LINKS.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className={`nav-link relative text-sm font-medium text-softDark px-2.5 py-1.5 rounded-md whitespace-nowrap cursor-pointer transition-all duration-200 hover:text-white hover:bg-[#207de9]/20 ${active === link ? "text-blue bg-[#207de9]/15" : ""}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActive(link);
-                    }}
+              {NAV_LINKS.map(({ text, link }) => (
+                <li key={text}>
+                  <NavLink
+                    to={link}
+                    className={`nav-link relative text-sm font-medium text-softDark px-2.5 py-1.5 rounded-md whitespace-nowrap cursor-pointer transition-all duration-200 hover:text-white hover:bg-dark/20`}
+                    onClick={() => setActive(text)}
                   >
-                    {link}
-                  </a>
+                    {text}
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -137,19 +136,18 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link}
-            href="#"
-            className={`mobile-link${active === link ? " active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault();
-              setActive(link);
+        {NAV_LINKS.map(({ text, link }) => (
+          <Link
+            key={text}
+            to={link}
+            className={`mobile-link${active === text ? " active" : ""}`}
+            onClick={() => {
+              setActive(text);
               setMenuOpen(false);
             }}
           >
-            {link}
-          </a>
+            {text}
+          </Link>
         ))}
         <div className="mobile-divider" />
         <div className="mobile-socials">
