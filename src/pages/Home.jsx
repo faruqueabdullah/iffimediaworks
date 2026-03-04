@@ -46,11 +46,13 @@ export default function Home() {
             <span className="text-blue">Marketing that eports Revenue</span>
           </h2>
           <p className="text-xl py-4 text-dark">
-            Traditional marketing optimizes for channel metrics. Revenue
-            marketing optimizes for business impact. Connected revenue marketing
-            through RevenueCloudFX leads to{" "}
+            Traditional marketing focuses on clicks, impressions, and channel
+            metrics. iFFi Media Works focuses on measurable business growth.With
+            our connected revenue-driven strategies and performance-focused
+            systems, we help brands achieve scalable growth and generate up to
+            .{" "}
             <span className="font-bold">
-              1.8X faster lead growth than industry average.
+              1.8X faster lead acceleration compared to industry benchmarks.
             </span>
           </p>
 
