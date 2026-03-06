@@ -407,7 +407,7 @@ function BarChart({ chart, animate }) {
       <div className="flex items-center gap-4 mt-0.5">
         <div className="flex items-center gap-1.5">
           <span
-            className="w-2 h-2 rounded-sm flex-shrink-0"
+            className="w-2 h-2 rounded-sm shrink-0"
             style={{ background: colorA }}
           />
           <span
@@ -419,7 +419,7 @@ function BarChart({ chart, animate }) {
         </div>
         <div className="flex items-center gap-1.5">
           <span
-            className="w-2 h-2 rounded-sm flex-shrink-0"
+            className="w-2 h-2 rounded-sm shrink-0"
             style={{ background: colorB }}
           />
           <span
@@ -575,7 +575,7 @@ function ServiceSection({ service, index }) {
             </div>
 
             <div>
-              <ChatButton text={"Chat on WhatsApp"} />
+              <ChatButton to={"https://wa.me/919473370867"} text={"Chat on WhatsApp"} />
             </div>
           </div>
 
@@ -652,7 +652,7 @@ export default function Services() {
         <h2 className="text-4xl md:text-5xl text-blue font-extrabold leading-[2.75rem] tracking-tighter pb-8">
           Ready to <span className="text-dark">accelerate?</span>
         </h2>
-        <ChatButton text={"Chat on WhatsApp"} />
+        <ChatButton to={"https://wa.me/919473370867"} text={"Chat on WhatsApp"} />
       </div>
     </div>
   );

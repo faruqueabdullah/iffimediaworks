@@ -141,7 +141,6 @@ export default function Navbar() {
           <Link
             key={text}
             to={link}
-            target="_blank"
             className={`mobile-link${active === text ? " active" : ""}`}
             onClick={() => {
               setActive(text);

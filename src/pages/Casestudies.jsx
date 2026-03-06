@@ -176,7 +176,6 @@ const MetricBadge = ({ value, color }) => {
 export default function CaseStudies() {
   return (
     <section className="relative bg-gray-50 py-20 lg:py-28 overflow-hidden">
-
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
@@ -343,9 +342,15 @@ export default function CaseStudies() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-gray-500 text-sm font-medium mb-4">
-            Ready to become our next success story? <span className="text-blue">Start Your Growth Journey</span>
+            Ready to become our next success story?{" "}
+            <span className="text-blue">Start Your Growth Journey</span>
           </p>
-          <ChatButton text={"Chat on WhatsApp"}/>
+          <div className="flex justify-center items-center">
+            <ChatButton
+              to={"https://wa.me/919473370867"}
+              text={"Chat on WhatsApp"}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ export default function About() {
           We're on a mission to bring clarity and performance to digital
           marketing for Indian businesses.
         </p>
-        <ChatButton text={"Chat on WhatsApp"} />
+        <div className="flex items-center justify-center"><ChatButton to={"https://wa.me/919473370867"} text={"Chat on WhatsApp"} /></div>
       </div>
 
       <div>
