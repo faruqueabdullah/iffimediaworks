@@ -152,14 +152,17 @@ export default function Navbar() {
         <div className="mobile-divider" />
         <div className="mobile-socials">
           {SOCIALS.map(({ Icon, label }) => (
-            <a key={label} href="#" className="social-btn" aria-label={label}>
+            <a
+              key={label}
+              href="#"
+              className="social-btn w-8.5 h-8.5 grid place-items-center rounded-lg text-softDark hover:text-light transition-all duration-200 hover:bg-softDark/20 hover:-translate-y-0.5"
+              aria-label={label}
+            >
               <Icon />
             </a>
           ))}
         </div>
-        <button className="cta-btn" style={{ alignSelf: "flex-start" }}>
-          Get Free Audit <ArrowIcon />
-        </button>
+       
       </div>
     </>
   );
