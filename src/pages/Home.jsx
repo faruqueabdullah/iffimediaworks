@@ -307,7 +307,7 @@ export default function Home() {
       <IndustriesSection />
 
       {/* CTA */}
-      <div className="max-w-7xl mx-auto px-3 md:px-6 lg:px-8 py-26 text-center">
+      <div className="max-w-7xl mx-auto px-3 md:px-6 lg:px-8 py-26 flex flex-col items-center justify-center">
         <h2 className="text-4xl md:text5xl text-blue font-extrabold leading-11 tracking-tighter">
           Ready to <span className="text-dark">accelerate?</span>
         </h2>

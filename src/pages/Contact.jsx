@@ -50,7 +50,7 @@ export default function ContactPage() {
       {/* TOASTER */}
       {showToast && (
         <div className="fixed top-10 right-6 z-50 rounded-lg bg-green-600 text-white px-5 py-3 shadow-lg animate-slide-in">
-          Message sent successfully
+          {msg? msg:"Message sent successfully"}
         </div>
       )}
 
@@ -122,6 +122,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder={`${`Your email`}`}
                 className={inputBase}
               />
@@ -136,6 +137,7 @@ export default function ContactPage() {
                 <input
                   type="tel"
                   name="number"
+                  required
                   placeholder={`${`Phone number`}`}
                   className={inputBase}
                 />
@@ -144,6 +146,7 @@ export default function ContactPage() {
               <div>
                 <textarea
                   name="message"
+                  required
                   rows={5}
                   placeholder={`${`How can we help?`}`}
                   className={`${inputBase} resize-none`}
