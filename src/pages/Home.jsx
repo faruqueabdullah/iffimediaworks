@@ -23,8 +23,11 @@ export default function Home() {
 
             {/* Input + Button */}
             <div className="flex max-w-md gap-3">
-              <ChatButton text={"Get Free Strategy Call"} />
-              <ChatButton text={"Chat on WhatsApp"} />
+              <ChatButton to={"contact"} text={"Get Free Strategy Call"} />
+              <ChatButton
+                to={"https://wa.me/919473370867"}
+                text={"Chat on WhatsApp"}
+              />
             </div>
           </div>
 
@@ -46,11 +49,8 @@ export default function Home() {
             <span className="text-blue">Marketing that eports Revenue</span>
           </h2>
           <p className="text-xl py-4 text-dark">
-            Traditional marketing focuses on clicks, impressions, and channel
-            metrics. iFFi Media Works focuses on measurable business growth.With
-            our connected revenue-driven strategies and performance-focused
-            systems, we help brands achieve scalable growth and generate up to
-            .{" "}
+            With our connected revenue-driven strategies and performance-focused
+            systems, we help brands achieve scalable growth and generate up to .{" "}
             <span className="font-bold">
               1.8X faster lead acceleration compared to industry benchmarks.
             </span>
@@ -156,7 +156,10 @@ export default function Home() {
               We simplify the process, stay transparent, and focus on strategies
               that genuinely help your business grow.
             </p>
-            <ChatButton text={"Chat on WhatsApp"} />
+            <ChatButton
+              to={"https://wa.me/919473370867"}
+              text={"Chat on WhatsApp"}
+            />
           </div>
           <div className="grid grid-cols-1 gap-3">
             <div className="grid grid-cols-4 gap-2">
@@ -318,7 +321,10 @@ export default function Home() {
           Global businesses can connect with us for strategy discussions and
           long-term growth partnerships.{" "}
         </p>
-        <ChatButton text={"Chat on WhatsApp"} />
+        <ChatButton
+          to={"https://wa.me/919473370867"}
+          text={"Chat on WhatsApp"}
+        />
       </div>
       <p className="text-lg py-10 text-dark bg-gray-200 font-bold text-center">
         Serving businesses across Bihar including Patna, Siwan, Gaya, and

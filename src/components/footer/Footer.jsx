@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const FacebookIcon = () => (
   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -49,11 +50,11 @@ const MailIcon = () => (
 
 
 const navLinks = [
-  { label: "Home",         href: "#" },
-  { label: "About Us",     href: "#" },
-  { label: "Services",     href: "#" },
-  { label: "Case Studies", href: "#" },
-  { label: "Contact",      href: "#" },
+  { label: "Home",         link: "/" },
+  { label: "About Us",     link: "about" },
+  { label: "Services",     link: "services" },
+  { label: "Case Studies", link: "case-studies" },
+  { label: "Contact",      link: "contact" },
 ];
 
 const legalLinks = [
@@ -80,10 +81,10 @@ const contactItems = [
 ];
 
 const socials = [
-  { icon: <FacebookIcon />,  href: "#", label: "Facebook"  },
-  { icon: <InstagramIcon />, href: "#", label: "Instagram" },
-  { icon: <LinkedinIcon />,  href: "#", label: "LinkedIn"  },
-  { icon: <TwitterIcon />,   href: "#", label: "Twitter"   },
+  { icon: <FacebookIcon />,  link:"https://www.facebook.com/iffimediaworks", label: "Facebook"  },
+  { icon: <InstagramIcon />, link: "https://www.instagram.com/iffimediawork", label: "Instagram" },
+  { icon: <LinkedinIcon />,  link: "https://www.linkedin.com/company/iffimediaworks", label: "LinkedIn"  },
+  { icon: <TwitterIcon />,   link: "https://x.com/iffimediaworks", label: "Twitter"   },
 ];
 
 export default function Footer() {
@@ -108,15 +109,16 @@ export default function Footer() {
 
             {/* Social icons */}
             <div className="flex items-center gap-3">
-              {socials.map(({ icon, href, label }) => (
-                <a
+              {socials.map(({ icon, link, label }) => (
+                <Link
                   key={label}
-                  href={href}
+                  to={link}
+                  target="_blank"
                   aria-label={label}
                   className="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center text-[#999] hover:text-white hover:border-[#555] transition-colors duration-200"
                 >
                   {icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -127,14 +129,14 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="space-y-4">
-              {navLinks.map(({ label, href }) => (
+              {navLinks.map(({ label, link }) => (
                 <li key={label}>
-                  <a
-                    href={href}
+                  <Link
+                    to={link}
                     className="text-[#ccc] text-sm hover:text-white transition-colors duration-200"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -146,14 +148,14 @@ export default function Footer() {
               Legal
             </h3>
             <ul className="space-y-4">
-              {legalLinks.map(({ label, href }) => (
+              {legalLinks.map(({ label }) => (
                 <li key={label}>
-                  <a
-                    href={href}
+                  <Link
+                    
                     className="text-[#ccc] text-sm hover:text-white transition-colors duration-200 leading-snug"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

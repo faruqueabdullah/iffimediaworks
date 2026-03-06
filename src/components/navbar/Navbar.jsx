@@ -46,10 +46,10 @@ const ArrowIcon = () => (
 );
 
 const SOCIALS = [
-  { Icon: TwitterIcon, label: "Twitter/X" },
-  { Icon: LinkedInIcon, label: "LinkedIn" },
-  { Icon: InstagramIcon, label: "Instagram" },
-  { Icon: FacebookIcon, label: "Facebook" },
+  { Icon: TwitterIcon, label: "Twitter/X", link:"https://x.com/iffimediaworks" },
+  { Icon: LinkedInIcon, label: "LinkedIn", link:"https://www.linkedin.com/company/iffimediaworks" },
+  { Icon: InstagramIcon, label: "Instagram", link:"https://www.instagram.com/iffimediawork" },
+  { Icon: FacebookIcon, label: "Facebook", link:"https://www.facebook.com/iffimediaworks" },
 ];
 
 export default function Navbar() {
@@ -103,22 +103,23 @@ export default function Navbar() {
 
             {/* Social icons */}
             <div className="social-icons flex items-center gap-1 px-5">
-              {SOCIALS.map(({ Icon, label }) => (
-                <a
+              {SOCIALS.map(({ Icon, label, link }) => (
+                <Link
                   key={label}
-                  href="#"
+                  to={link}
+                  target="_blank"
                   className="social-btn w-8.5 h-8.5 grid place-items-center rounded-lg text-softDark transition-all duration-200 hover:text-white hover:bg-[#207de9]/20 hover:-translate-y-0.5"
                   aria-label={label}
                 >
                   <Icon />
-                </a>
+                </Link>
               ))}
             </div>
 
             {/* CTA */}
-            <button className="cta-btn inline-flex items-center gap-2 bg-[#207de9] text-white px-5 py-2.5 rounded-lg font-bold text-sm tracking-[0.4px] uppercase whitespace-nowrap shrink-0 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2f8ef5] cursor-pointer">
+            <Link to={"contact"} className="cta-btn inline-flex items-center gap-2 bg-[#207de9] text-white px-5 py-2.5 rounded-lg font-bold text-sm tracking-[0.4px] uppercase whitespace-nowrap shrink-0 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2f8ef5] cursor-pointer">
               Get Free Audit <ArrowIcon />
-            </button>
+            </Link>
           </div>
 
           {/* Hamburger */}
@@ -140,6 +141,7 @@ export default function Navbar() {
           <Link
             key={text}
             to={link}
+            target="_blank"
             className={`mobile-link${active === text ? " active" : ""}`}
             onClick={() => {
               setActive(text);
@@ -151,15 +153,15 @@ export default function Navbar() {
         ))}
         <div className="mobile-divider" />
         <div className="mobile-socials">
-          {SOCIALS.map(({ Icon, label }) => (
-            <a
+          {SOCIALS.map(({ Icon, label, link }) => (
+            <Link
               key={label}
-              href="#"
+              to={link}
               className="social-btn w-8.5 h-8.5 grid place-items-center rounded-lg text-softDark hover:text-light transition-all duration-200 hover:bg-softDark/20 hover:-translate-y-0.5"
               aria-label={label}
             >
               <Icon />
-            </a>
+            </Link>
           ))}
         </div>
        
